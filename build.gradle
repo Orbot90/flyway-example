@@ -1,0 +1,37 @@
+buildscript {
+    dependencies {
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE')
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'flyway-example'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    manifest {
+        attributes 'Main-Class': 'ru.orbot90.migration.example.Application'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-autoconfigure',
+            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-data-jpa',
+            'org.flywaydb:flyway-core:4.0.3',
+            "hsqldb:hsqldb:1.8.0.10"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion='2.7'
+}
