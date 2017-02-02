@@ -26,7 +26,6 @@ repositories {
 
 dependencies {
     compile 'org.springframework.boot:spring-boot-autoconfigure',
-            'org.springframework.boot:spring-boot-starter-web',
             'org.springframework.boot:spring-boot-starter-data-jpa',
             'org.flywaydb:flyway-core:4.0.3',
             'org.hsqldb:hsqldb:2.3.2'
